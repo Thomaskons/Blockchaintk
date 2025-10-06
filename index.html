@@ -1,318 +1,1288 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kripto Fonları Kurtarma Güncellemesi – Vaka REF-#68746584178917</title>
-  <meta name="description" content="James O'RAW için resmi kripto fonları kurtarma bildirimi - Vaka REF-#68746584178917" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #0057b8; /* Deepened blue for professional look */
-      --accent: #28a745;
-      --muted: #5c6c7a;
-      --bg: #f5f7fa;
-      --card-bg: #ffffff;
-      --border: #e0e4e8;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      --hover: #004a9a;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: #1a2a44;
-      padding: 30px;
-      line-height: 1.7;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .header {
-      background: linear-gradient(90deg, var(--primary) 0%, #007bff 100%);
-      padding: 30px;
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .logo {
-      height: 50px;
-      width: auto;
-      filter: brightness(0) invert(1); /* White logo for contrast */
-    }
-    .content {
-      padding: 30px;
-    }
-    .meta {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .status {
-      background: rgba(40, 167, 69, 0.15);
-      color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 25px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    .amount {
-      background: #e8f0fe;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px solid var(--border);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .amount small {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--muted);
-    }
-    .section {
-      margin-bottom: 25px;
-    }
-    .section h3 {
-      color: #1a2a44;
-      font-size: 1.25rem;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    .section ul {
-      padding-left: 25px;
-      margin: 0;
-      list-style-type: disc;
-    }
-    .section ul li {
-      color: #2c3e50;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-    .security {
-      display: flex;
-      gap: 12px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      flex-wrap: wrap;
-    }
-    .security span {
-      background: rgba(40, 167, 69, 0.15);
-      padding: 6px 12px;
-      border-radius: 20px;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .signature {
-      border-top: 1px solid var(--border);
-      padding-top: 25px;
-      margin-top: 25px;
-    }
-    .signature p {
-      margin: 0 0 15px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .signature .signed-by {
-      font-weight: 600;
-      color: var(--primary);
-      margin-top: 10px;
-      display: none; /* Hidden until signed */
-    }
-    .btn-sign {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .btn-sign:hover {
-      background: var(--hover);
-    }
-    .modal-content {
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .modal-header {
-      border-bottom: 1px solid var(--border);
-      background: #f8f9fa;
-    }
-    .modal-footer {
-      border-top: 1px solid var(--border);
-    }
-    .form-control {
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-    .footer {
-      background: var(--bg);
-      padding: 20px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
-      margin: 0 8px;
-      transition: color 0.3s ease;
-    }
-    .footer a:hover {
-      color: var(--hover);
-    }
-    @media (max-width: 768px) {
-      .container {
-        margin: 0 15px;
-      }
-      .header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .amount {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-      }
-      body {
-        padding: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apple Inc. Investment Opportunities - Premium Bonds with Competitive Returns">
+    <title>Apple Inc. - Premium Investment Opportunities</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <style>
+        :root {
+            --apple-gray: #1d1d1f;
+            --apple-light: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-dark-gray: #86868b;
+            --gold: #d4af37;
+            --success-green: #34c759;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--apple-gray);
+            background: #fff;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: saturate(180%) blur(20px);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #f5f5f7 !important;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .apple-logo {
+            width: 32px;
+            height: 32px;
+            fill: #f5f5f7;
+        }
+        
+        .nav-link {
+            color: #f5f5f7 !important;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.75rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--apple-blue) !important;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grid" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/></linearGradient></defs><g stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"><line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="400" x2="1200" y2="400"/><line x1="0" y1="500" x2="1200" y2="500"/><line x1="200" y1="0" x2="200" y2="600"/><line x1="400" y1="0" x2="400" y2="600"/><line x1="600" y1="0" x2="600" y2="600"/><line x1="800" y1="0" x2="800" y2="600"/><line x1="1000" y1="0" x2="1000" y2="600"/></g><circle cx="150" cy="150" r="120" fill="rgba(255,255,255,0.03)"/><circle cx="950" cy="450" r="180" fill="rgba(255,255,255,0.02)"/></svg>');
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            fill: white;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+        }
+        
+        .badge-sec {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        section {
+            padding: 90px 0;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--apple-gray), var(--apple-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--apple-dark-gray);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .investment-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #e5e5e7;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--apple-blue), #00a1ff);
+        }
+        
+        .investment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+            border-color: var(--apple-blue);
+        }
+        
+        .investment-card .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--apple-blue), #00a1ff);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
+        }
+        
+        .investment-card .card-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .quote-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .investment-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--apple-gray);
+        }
+        
+        .bond-type {
+            color: var(--apple-dark-gray);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .investment-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #e5e5e7;
+        }
+        
+        .investment-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .investment-detail .label {
+            color: var(--apple-dark-gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .investment-detail .value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--apple-gray);
+        }
+        
+        .investment-detail .value.highlight {
+            color: var(--success-green);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .chart-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 90px 0;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--apple-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .chart-title i {
+            color: var(--apple-blue);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--apple-blue);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-box .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--apple-blue), #00a1ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.3);
+        }
+        
+        .stat-box .icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .stat-box .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--apple-gray);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--apple-gray), var(--apple-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-box .label {
+            color: var(--apple-dark-gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .product-showcase {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            color: white;
+            padding: 90px 0;
+        }
+        
+        .product-showcase .section-title {
+            background: linear-gradient(135deg, white, var(--apple-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .product-showcase .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .product-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: var(--apple-blue);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image i {
+            font-size: 6rem;
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .product-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .product-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .environmental-section {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .environmental-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="100" cy="100" r="150" fill="rgba(255,255,255,0.05)"/><circle cx="1000" cy="500" r="200" fill="rgba(255,255,255,0.03)"/><path d="M0,300 Q300,250 600,300 T1200,300" stroke="rgba(255,255,255,0.1)" stroke-width="3" fill="none"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .environmental-section .section-title,
+        .environmental-section .section-subtitle {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+        
+        .logo-item svg {
+            width: 100px;
+            height: 60px;
+            fill: white;
+        }
+        
+        .btn-primary-apple {
+            background: linear-gradient(135deg, var(--apple-blue), #00a1ff);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary-apple:hover {
+            background: linear-gradient(135deg, #0077ed, #00b4ff);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 113, 227, 0.4);
+        }
+        
+        .btn-secondary-apple {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-secondary-apple:hover {
+            background: white;
+            color: var(--apple-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        .disclaimer-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .disclaimer-box {
+            background: white;
+            border-left: 6px solid var(--gold);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .disclaimer-box h5 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        .disclaimer-box i {
+            font-size: 2rem;
+        }
+        
+        .contract-section {
+            background: linear-gradient(135deg, var(--apple-gray) 0%, #2d2d2d 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .signature-section {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+        }
+        
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        
+        .signature-box {
+            border: 2px solid #e5e5e7;
+            border-radius: 16px;
+            padding: 2rem;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .signature-box:hover {
+            border-color: var(--apple-blue);
+            background: white;
+        }
+        
+        .signature-box label {
+            font-weight: 700;
+            color: var(--apple-gray);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        
+        .signature-box .signature-line {
+            border-bottom: 3px solid var(--apple-gray);
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+        }
+        
+        footer {
+            background: var(--apple-gray);
+            color: #f5f5f7;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            fill: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 70px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <img src="https://imgpx.com/RMqYcKOAUlOn.png" alt="Kuruluş Logosu" class="logo" />
-      <h2 class="mb-0"></h2>
-    </header>
-    <div class="content">
-      <h1 class="mb-4">Kripto Fonları Kurtarma Güncellemesi – Vaka REF-#68746584178917</h1>
-      <p class="meta">
-        Gönderen: <strong>Blockchain</strong><br />
-        Alıcı: <strong>James O'RAW  Hesap: oraw67@hotmail.co.uk</strong><br />
-        Tarih: <strong>24 Eylül 2025</strong>
-      </p>
-      <div class="status mb-4">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-        Onaylandı
-      </div>
-      <div class="section">
-        <h3>Kurtarılan Fonlar Özeti</h3>
-        <div class="amount">
-          <span>USD 37,391.12</span>
-          <small>BTC (Bitcoin)</small>
-        </div>
-      </div>
-      <div class="section">
-        <h3>Transfer Yöntemi Seçenekleri</h3>
-        <p>Yalnızca doğrulanmış kanallar üzerinden BTC uyumlu cüzdan adresi sağlayın.</p>
-      </div>
-      <div class="section">
-        <h3>Kimlik Doğrulama (KYC / AML)</h3>
-        <ul>
-          <li>Hükümet tarafından verilen kimlik</li>
-          <li>Adres kanıtı</li>
-        </ul>
-        <p>Güvenli portal üzerinden yükleyin.</p>
-      </div>
-      <div class="section">
-        <h3>İletişim Tercihleri</h3>
-        <ul>
-          <li>Telefon veya e-posta</li>
-        </ul>
-        <p>Doğrulanmamış kanallar kullanılmaz.</p>
-      </div>
-      <div class="section security">
-        <span>Şifrelenmiş</span>
-        <span>Düzenlenmiş</span>
-        <span>Uyumlu</span>
-      </div>
-      <div class="section">
-        <h3>Güvenlik Notları</h3>
-        <ul>
-          <li>Şifreleri veya anahtarları paylaşmayın</li>
-          <li>Güvenli kanallar kullanın</li>
-          <li>İstenmeyen temasları rapor edin</li>
-        </ul>
-      </div>
-      <div class="signature">
-        <p>Thomas Weeber<br />Hükümet Müfettişi, FATF<br /><a href="mailto:blockchain@withdrawal.pro">blockchain@withdrawal.pro</a></p>
-        <p class="signed-by" id="signedBy">İmzalanan: <span id="signerName"></span></p>
-        <button class="btn-sign" data-bs-toggle="modal" data-bs-target="#signModal">Belgeyi İmzalayın</button>
-      </div>
-    </div>
-    <footer class="footer">
-      <p>
-        Blockchain © 2025. Tüm hakları saklıdır.<br />
-        Vaka Referansı: REF-#68746584178917 | <a href="https://wakandacybertrace.com">Blockchain.com</a><br />
-        <a href="#">Abonelikten Çık</a> | <a href="#">Gizlilik Politikası</a> | <a href="#">Hizmet Şartları</a>
-      </p>
-    </footer>
-  </div>
-
-  <!-- Sign Modal -->
-  <div class="modal fade" id="signModal" tabindex="-1" aria-labelledby="signModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signModalLabel">Belgeyi İmzalayın</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="signForm">
-            <div class="mb-3">
-              <label for="signName" class="form-label">Adınızı Yazın</label>
-              <input type="text" class="form-control" id="signName" placeholder="Tam adınızı girin" required>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <svg class="apple-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                Apple Inc.
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#investments"><i class="bi bi-graph-up"></i> Investments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#analytics"><i class="bi bi-bar-chart"></i> Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products"><i class="bi bi-box"></i> Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#environmental"><i class="bi bi-leaf"></i> Environmental</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contract"><i class="bi bi-file-earmark-text"></i> Contract</a></li>
+                </ul>
             </div>
-          </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-          <button type="button" class="btn btn-primary" onclick="submitSign()">Gönder</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script>
-    function submitSign() {
-      const name = document.getElementById('signName').value.trim();
-      if (name) {
-        // Update the document with the signer's name
-        const signedByElement = document.getElementById('signedBy');
-        const signerNameElement = document.getElementById('signerName');
-        signerNameElement.textContent = name;
-        signedByElement.style.display = 'block'; // Show the signed-by text
-        document.querySelector('.btn-sign').style.display = 'none'; // Hide the sign button
-        alert(`Belge imzalandı: ${name}`);
-        
-        // Close modal
-        const modal = bootstrap.Modal.getInstance(document.getElementById('signModal'));
-        modal.hide();
-      } else {
-        alert('Lütfen adınızı girin.');
-      }
-    }
-  </script>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                <div class="badge-sec"><i class="bi bi-shield-check"></i> SEC File Number: 001-36743</div>
+                <h1>Premium Investment Opportunities</h1>
+                <p>Invest in Apple Inc. bonds with competitive annual returns up to 49.8%. Secure your financial future with one of the world's most valuable technology companies.</p>
+                <div class="mt-4">
+                    <a href="#investments" class="btn-primary-apple me-3"><i class="bi bi-graph-up-arrow"></i> Explore Investments</a>
+                    <a href="#contract" class="btn-secondary-apple"><i class="bi bi-download"></i> Get Contract</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="investments">
+        <div class="container">
+            <h2 class="section-title">Investment Opportunities</h2>
+            <p class="section-subtitle">Choose from our range of premium bond investment packages with competitive returns and flexible terms</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <div class="card-icon">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <div class="quote-badge">Quote I</div>
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p class="bond-type"><i class="bi bi-award"></i> Coupon Bond</p>
+                        <div class="investment-details">
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-clock-history"></i> Investment Period</span>
+                                <span class="value">1-6 Weeks</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-percent"></i> Annual Return</span>
+                                <span class="value highlight">38.6%</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-cash-stack"></i> Investment Amount</span>
+                                <span class="value">$22,380 USD</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-graph-up"></i> Starting From</span>
+                                <span class="value">$39,633 USD</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contract" class="btn-primary-apple w-100"><i class="bi bi-check-circle"></i> Select Option</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <div class="card-icon">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <div class="quote-badge">Quote II - Popular</div>
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p class="bond-type"><i class="bi bi-award"></i> Coupon Bond</p>
+                        <div class="investment-details">
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-clock-history"></i> Investment Period</span>
+                                <span class="value">1-12 Weeks</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-percent"></i> Annual Return</span>
+                                <span class="value highlight">41.2%</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-cash-stack"></i> Investment Amount</span>
+                                <span class="value">$25,150 USD</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-graph-up"></i> Starting From</span>
+                                <span class="value">$43,777 USD</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contract" class="btn-primary-apple w-100"><i class="bi bi-check-circle"></i> Select Option</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <div class="card-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="quote-badge">Premium - Highest Return</div>
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p class="bond-type"><i class="bi bi-stars"></i> Indexed Bond</p>
+                        <div class="investment-details">
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-clock-history"></i> Investment Period</span>
+                                <span class="value">3-24 Weeks</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-percent"></i> Annual Return</span>
+                                <span class="value highlight">49.8%</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-cash-stack"></i> Investment Amount</span>
+                                <span class="value">$35,000 USD</span>
+                            </div>
+                            <div class="investment-detail">
+                                <span class="label"><i class="bi bi-graph-up"></i> Starting From</span>
+                                <span class="value">$70,196 USD</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contract" class="btn-primary-apple w-100"><i class="bi bi-check-circle"></i> Select Option</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="chart-section">
+        <div class="container">
+            <h2 class="section-title">Investment Performance Analytics</h2>
+            <p class="section-subtitle">Real-time data and projections showing the growth potential of your investment</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="chart-container">
+                        <h4 class="chart-title"><i class="bi bi-graph-up-arrow"></i> Investment Growth Projection</h4>
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="chart-container">
+                        <h4 class="chart-title"><i class="bi bi-pie-chart"></i> Portfolio Distribution</h4>
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h4 class="chart-title"><i class="bi bi-bar-chart-line"></i> Annual Returns Comparison</h4>
+                        <canvas id="returnsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h4 class="chart-title"><i class="bi bi-graph-down-arrow"></i> Risk vs. Return Analysis</h4>
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <div class="number">$2.8T</div>
+                    <div class="label">Market Capitalization</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="icon">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <div class="number">65%</div>
+                    <div class="label">Revenue Growth (2015-2025)</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <div class="number">AAA</div>
+                    <div class="label">Credit Rating</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div class="number">100%</div>
+                    <div class="label">Investor Security</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="product-showcase">
+        <div class="container">
+            <h2 class="section-title">Apple Product Ecosystem</h2>
+            <p class="section-subtitle">Innovation and cutting-edge technology across every product line</p>
+            
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>MacBook Pro</h4>
+                        <p><strong>M4 Chip</strong> - The most advanced lineup of chips ever built for a pro laptop with phenomenal performance and enhanced machine learning capabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-tablet"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>iPad Pro & Air</h4>
+                        <p><strong>M3 Chip</strong> - Astonishing power in an unbelievably thin design. The thinnest product Apple has ever created with Apple Intelligence built-in.</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>iPhone 17 Pro</h4>
+                        <p><strong>Titanium Design</strong> - Grade 5 titanium with 48MP Fusion camera. Spatial capture for 3D photos and videos with Apple Vision Pro.</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-smartwatch"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>Apple Watch Ultra 2</h4>
+                        <p><strong>Black Titanium</strong> - Ultimate sports and adventure watch with the most accurate GPS. Apple Watch Hermès with nautical-inspired design.</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-headphones"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>AirPods Max</h4>
+                        <p><strong>Spatial Audio</strong> - Stunningly detailed high-fidelity audio with personalized spatial audio and dynamic head tracking for immersive experience.</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        <i class="bi bi-display"></i>
+                    </div>
+                    <div class="product-content">
+                        <h4>Apple Vision Pro</h4>
+                        <p><strong>Spatial Computing</strong> - Revolutionary spatial computer that seamlessly blends digital content with your physical space for incredible experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="environmental" class="environmental-section">
+        <div class="container">
+            <h2 class="section-title">Apple 2030: Our Environmental Commitment</h2>
+            <p class="section-subtitle">Leading the industry in sustainability with ambitious science-based goals and measurable progress</p>
+            
+            <div class="logo-showcase">
+                <div class="logo-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
+                        <text x="10" y="35" font-size="28" font-weight="bold" fill="white">75%</text>
+                        <text x="10" y="50" font-size="10" fill="white">Emissions Cut</text>
+                    </svg>
+                </div>
+                
+                <div class="logo-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
+                        <circle cx="30" cy="30" r="20" fill="none" stroke="white" stroke-width="3"/>
+                        <path d="M30,10 A20,20 0 0,1 50,30" fill="none" stroke="white" stroke-width="4"/>
+                        <text x="60" y="35" font-size="24" font-weight="bold" fill="white">2030</text>
+                    </svg>
+                </div>
+                
+                <div class="logo-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
+                        <path d="M30,40 Q30,20 45,20 T60,40" fill="none" stroke="white" stroke-width="3"/>
+                        <circle cx="45" cy="15" r="5" fill="white"/>
+                        <text x="70" y="35" font-size="12" fill="white">Carbon</text>
+                        <text x="70" y="48" font-size="12" fill="white">Neutral</text>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-md-3">
+                    <div class="stat-box" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                        <div class="icon" style="background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-graph-down-arrow"></i>
+                        </div>
+                        <div class="number" style="color: white; -webkit-text-fill-color: white;">60%</div>
+                        <div class="label" style="color: rgba(255,255,255,0.9);">Emissions Reduced Since 2015</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="stat-box" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                        <div class="icon" style="background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-recycle"></i>
+                        </div>
+                        <div class="number" style="color: white; -webkit-text-fill-color: white;">24%</div>
+                        <div class="label" style="color: rgba(255,255,255,0.9);">Recycled/Renewable Materials</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="stat-box" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                        <div class="icon" style="background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-sun"></i>
+                        </div>
+                        <div class="number" style="color: white; -webkit-text-fill-color: white;">100%</div>
+                        <div class="label" style="color: rgba(255,255,255,0.9);">Renewable Energy Operations</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="stat-box" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                        <div class="icon" style="background: rgba(255,255,255,0.2);">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <div class="number" style="color: white; -webkit-text-fill-color: white;">15</div>
+                        <div class="label" style="color: rgba(255,255,255,0.9);">Priority Materials Program</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-box">
+                <h5><i class="bi bi-info-circle-fill text-warning"></i> Important Investment Disclaimer</h5>
+                <p><strong>Apple Payments Services LLC Notice:</strong> Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Goldman Sachs Bank USA for Apple Card and Savings accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank.</p>
+                <p class="mt-3"><strong>Investment Risk Notice:</strong> All rights reserved and data securitization is provided to the investor registry of United States of America and UK. Investment involves risk. Past performance does not guarantee future results. Bond values may fluctuate based on market conditions. Please consult with a licensed financial advisor before making any investment decisions.</p>
+                <p class="mt-3"><strong>Regulatory Compliance:</strong> This offering is registered with the U.S. Securities and Exchange Commission under file number 001-36743. All investments are subject to applicable federal and state securities laws.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contract" class="contract-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white; -webkit-text-fill-color: white;">Investment Contract</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Complete the contract information below to formalize your investment</p>
+            
+            <div class="signature-section">
+                <div class="text-center mb-4">
+                    <svg class="apple-logo" style="fill: var(--apple-gray);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <h4 class="mt-3" style="color: var(--apple-gray); font-weight: 800;">Apple Inc. Bond Investment Agreement</h4>
+                    <p style="color: var(--apple-dark-gray);">SEC File Number: 001-36743</p>
+                </div>
+                
+                <div class="signature-grid">
+                    <div class="signature-box">
+                        <label><i class="bi bi-person-fill"></i> Client Name:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    
+                    <div class="signature-box">
+                        <label><i class="bi bi-building"></i> Counterparty:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    
+                    <div class="signature-box">
+                        <label><i class="bi bi-briefcase"></i> Company:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    
+                    <div class="signature-box">
+                        <label><i class="bi bi-calendar"></i> Date Contract:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="signature-box">
+                            <label><i class="bi bi-pencil-square"></i> Client Signature:</label>
+                            <div class="signature-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="signature-box">
+                            <label><i class="bi bi-person-badge"></i> Financial Analyst Signature:</label>
+                            <div class="signature-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="signature-box">
+                            <label><i class="bi bi-star-fill"></i> Head of Financial Department:</label>
+                            <p class="mb-2 mt-3" style="font-weight: 700; color: var(--apple-gray);">Rob Jeffery</p>
+                            <div class="signature-line"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <button class="btn-primary-apple btn-lg px-5" onclick="alert('Thank you for your interest. A financial advisor will contact you within 24 hours to complete your investment contract.')">
+                        <i class="bi bi-file-earmark-check"></i> Submit Contract Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="text-center mb-4">
+                <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                <h5 style="color: white; font-weight: 700; margin-top: 1rem;">Apple Inc.</h5>
+            </div>
+            
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h6 style="font-weight: 700; margin-bottom: 1rem;">Quick Links</h6>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#investments" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s;">Investment Options</a>
+                        <a href="#analytics" style="color: rgba(255,255,255,0.8); text-decoration: none;">Performance Analytics</a>
+                        <a href="#products" style="color: rgba(255,255,255,0.8); text-decoration: none;">Product Ecosystem</a>
+                        <a href="#environmental" style="color: rgba(255,255,255,0.8); text-decoration: none;">Environmental Commitment</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h6 style="font-weight: 700; margin-bottom: 1rem;">Legal</h6>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Privacy Policy</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Terms & Conditions</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Investment Disclaimer</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">SEC Filings</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h6 style="font-weight: 700; margin-bottom: 1rem;">Contact</h6>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        <i class="bi bi-envelope"></i> investor.relations@apple.com<br>
+                        <i class="bi bi-telephone"></i> 1-800-692-7753<br>
+                        <i class="bi bi-geo-alt"></i> Cupertino, California
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="opacity: 0.7; font-size: 0.875rem;">© 2025 Apple Inc. All rights reserved. | SEC File Number: 001-36743</p>
+                <p style="opacity: 0.6; font-size: 0.75rem; margin-top: 0.5rem;">
+                    Investment involves risk. This is an informational website. Please consult with licensed financial advisors before investing.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Growth Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 4', 'Week 8', 'Week 12', 'Week 16', 'Week 20', 'Week 24'],
+                datasets: [{
+                    label: 'Quote I (38.6% APR)',
+                    data: [22380, 22584, 22790, 22998, 23208, 23420, 23634],
+                    borderColor: '#0071e3',
+                    backgroundColor: 'rgba(0, 113, 227, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Quote II (41.2% APR)',
+                    data: [25150, 25389, 25631, 25876, 26124, 26375, 26629],
+                    borderColor: '#34c759',
+                    backgroundColor: 'rgba(52, 199, 89, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Indexed Bond (49.8% APR)',
+                    data: [35000, 35494, 35995, 36504, 37020, 37544, 38076],
+                    borderColor: '#ff6b6b',
+                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Portfolio Chart
+        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(portfolioCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Quote I', 'Quote II', 'Indexed Bond'],
+                datasets: [{
+                    data: [38.6, 41.2, 49.8],
+                    backgroundColor: ['#0071e3', '#34c759', '#ff6b6b'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Returns Chart
+        const returnsCtx = document.getElementById('returnsChart').getContext('2d');
+        new Chart(returnsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Quote I', 'Quote II', 'Indexed Bond'],
+                datasets: [{
+                    label: 'Annual Return (%)',
+                    data: [38.6, 41.2, 49.8],
+                    backgroundColor: ['#0071e3', '#34c759', '#ff6b6b'],
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Risk Chart
+        const riskCtx = document.getElementById('riskChart').getContext('2d');
+        new Chart(riskCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Quote I',
+                    data: [{x: 2, y: 38.6}],
+                    backgroundColor: '#0071e3',
+                    pointRadius: 10
+                }, {
+                    label: 'Quote II',
+                    data: [{x: 3, y: 41.2}],
+                    backgroundColor: '#34c759',
+                    pointRadius: 10
+                }, {
+                    label: 'Indexed Bond',
+                    data: [{x: 4, y: 49.8}],
+                    backgroundColor: '#ff6b6b',
+                    pointRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Risk Level' },
+                        min: 0,
+                        max: 6
+                    },
+                    y: {
+                        title: { display: true, text: 'Return (%)' },
+                        beginAtZero: true,
+                        max: 60
+                    }
+                }
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.92)';
+            }
+        });
+    </script>
 </body>
 </html>
